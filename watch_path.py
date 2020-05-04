@@ -36,13 +36,15 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 def subprocess_callback(**kwargs):
     """
     """
-    commands = kwargs['commands'].split(' ')
     if kwargs.get('verbose') > 0:
-        print("commands -> {}".format(commands))
+        print("commands -> {}".format(kwargs['commands']))
 
-    process = Popen(commands, stdout = PIPE, stderr = PIPE)
+    process = Popen(kwargs['commands'], stdout = PIPE, stderr = PIPE, shell = True)
     stdout, stderr = process.communicate()
     if stderr:
+        if kwargs.get('decode'):
+            raise Exception(stderr.decode(kwargs['decode']))
+
         raise Exception(stderr)
 
     if stdout:
@@ -56,8 +58,8 @@ arg_parser = ArgumentParser(
     usage = '%(prog)s --file "file.txt" --command "cat file.txt"',
     epilog = 'For more projects see: https://github.com/S0AndS0')
 
-arg_parser.add_argument('--file-path', '--file',
-                        help = 'File path to watch for modify time changes',
+arg_parser.add_argument('--path', '--file', '--file-path',
+                        help = 'File or directory path to watch for modify time changes',
                         required = True)
 
 arg_parser.add_argument('--commands', '--command',
@@ -82,11 +84,9 @@ arg_parser.add_argument('--verbose', '-v',
 
 
 args = vars(arg_parser.parse_args())
+args.update(callback = subprocess_callback)
 
-path_watcher = Watch_Path(args['path'],
-                          subprocess_callback,
-                          commands = args['commands'],
-                          verbose = args['verbose'])
+path_watcher = Watch_Path(**args)
 
 decode = args.get('decode')
 if decode:
