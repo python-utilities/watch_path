@@ -53,7 +53,7 @@ ___
   "&#9889; Perhaps as easy as one, 2.0,..."
 
 
-This repository encourages the use of Git Submodules to track dependencies
+When utilizing this repository within other projects Git Submodules to track dependencies are encouraged
 
 
 **Bash Variables**
@@ -153,13 +153,35 @@ git push
 Example of running as command-line utility...
 
 
+- _Installation_
+
+
 ```Bash
-./watch_path.py --help
+mkdir -p ~/git/hub/python-utilities/watch_path
+
+cd ~/git/hub/python-utilities/watch_path
+
+git clone https://github.com/python-utilities/watch_path.git
+
+mkdir -p ~/bin
+
+ln -s "${HOME}/git/hub/python-utilities/watch_path/watch_path.py" "${HOME}/bin/watch_path"
 ```
 
 
+- Print available commands
+
+
 ```Bash
-./watch_path.py --file test.txt
+watch_path --help
+```
+
+
+- Run command when `test.txt` file changes
+
+
+```Bash
+watch_path --file test.txt
   --command 'cat test.txt'\
   --sleep 0.5\
   --decode utf-8
