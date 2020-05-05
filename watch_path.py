@@ -89,8 +89,7 @@ args.update(callback = subprocess_callback)
 path_watcher = Watch_Path(**args)
 
 decode = args.get('decode')
-if decode:
-    decode = decode.upper()
+
 
 try:
     for callback_results in path_watcher:
