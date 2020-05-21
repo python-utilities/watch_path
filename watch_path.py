@@ -2,7 +2,7 @@
 
 
 if __name__ != '__main__':
-    raise Exception('')
+    raise NotImplementedError('Please try running this file as a script instead.')
 
 
 from argparse import ArgumentParser

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+
+if __name__ == '__main__':
+    raise NotImplementedError('Please import Watch_Path instead')
+
+
 import os
 from collections import Iterator
 
@@ -50,7 +55,3 @@ class Watch_Path(dict, Iterator):
                                     **self['callback_kwargs'])
 
     __next__ = next
-
-
-if __name__ == '__main__':
-    raise Exception('')
