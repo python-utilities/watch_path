@@ -91,19 +91,23 @@ path_watcher = Watch_Path(**args)
 decode = args.get('decode')
 
 
-try:
-    for callback_results in path_watcher:
-        if callback_results:
-            if args.get('verbose') > 0:
-                print("callback_results['returncode'] ->", callback_results['returncode'])
-                print("callback_results['stdout']...")
+def main(args):
+    try:
+        for callback_results in path_watcher:
+            if callback_results:
+                if args.get('verbose') > 0:
+                    print("callback_results['returncode'] ->", callback_results['returncode'])
+                    print("callback_results['stdout']...")
 
-            if decode:
-                print(callback_results['stdout'].decode(decode))
-            else:
-                print(callback_results['stdout'])
+                if decode:
+                    print(callback_results['stdout'].decode(decode))
+                else:
+                    print(callback_results['stdout'])
 
-        sleep(args.get('sleep', 1.0))
+            sleep(args.get('sleep', 1.0))
 
-except KeyboardInterrupt:
-    print('Stopping watcher and exiting...')
+    except KeyboardInterrupt:
+        print('Stopping watcher and exiting...')
+
+
+main(args)
