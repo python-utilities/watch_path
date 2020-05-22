@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
 
-if __name__ != '__main__':
-    raise NotImplementedError('Please try running this file as a script instead.')
-
-
 from argparse import ArgumentParser
 from os.path import basename
 from subprocess import (Popen, PIPE)
