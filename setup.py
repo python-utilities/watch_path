@@ -10,7 +10,7 @@ with open(".github/README.md", "r") as fh:
 
 setup(
     name = "watch_path",
-    version = "0.0.6",
+    version = "0.0.7",
     author = "S0AndS0",
     author_email = "StrangerThanBland@gmail.com",
     description = "Simple wrapper for `os.stat`, calls callback function time-stamp changes",
@@ -18,6 +18,11 @@ setup(
     long_description_content_type = "text/markdown",
     url = "https://github.com/python-utilities/watch_path",
     packages = find_packages(),
+    entry_points = {
+        'console_scripts': [
+            'watch_path = watch_path.cli'
+        ],
+    },
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
