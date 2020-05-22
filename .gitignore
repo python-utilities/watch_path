@@ -1,2 +1,4 @@
 __pycache__
 *.pyc
+dist
+watch_path.egg-info
