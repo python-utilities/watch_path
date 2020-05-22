@@ -20,7 +20,7 @@ Runs command or callback function when path file modified time changes
 
 - [:zap: Quick Start][heading__quick_start]
 
-  - [:memo: Edit Your ReadMe File][heading__your_readme_file]
+  - [:memo: Your Requirements File][heading__your_requirements_file]
   - [:floppy_disk: Commit and Push][heading__commit_and_push]
   - [&#x1F9F0; Usage][heading__usage]
 
@@ -53,54 +53,25 @@ ___
   "&#9889; Perhaps as easy as one, 2.0,..."
 
 
-When utilizing this repository within other projects Git Submodules to track dependencies are encouraged
-
-
-**Bash Variables**
+Install this project via Pip version 2 or 3
 
 
 ```Bash
-_module_name='watch_path'
-_module_https_url="https://github.com/python-utilities/watch_path.git"
-_module_base_dir='modules'
-_module_path="${_module_base_dir}/${_module_name}"
+pip3 install --user --upgrade watch-path
 ```
 
 
-**Bash Submodule Commands**
+### Your Requirements File
+[heading__your_requirements_file]:
+  #your-requirements-file
+  "&#x1F4DD; Suggested additions for your requirements.txt file so everyone has a good time with dependencies"
 
 
-```Bash
-cd "<your-git-project-path>"
-
-mkdir -vp "${_module_base_dir}"
-
-git submodule add\
- -b master --name "${_module_name}"\
- "${_module_https_url}" "${_module_path}"
-```
+Suggested additions for your requirements.txt file so everyone has a good time with dependencies
 
 
-### Your ReadMe File
-[heading__your_readme_file]:
-  #your-readme-file
-  "&#x1F4DD; Suggested additions for your ReadMe.md file so everyone has a good time with submodules"
-
-
-Suggested additions for your _`ReadMe.md`_ file so everyone has a good time with submodules
-
-
-```MarkDown
-Clone with the following to avoid incomplete downloads
-
-
-    git clone --recurse-submodules <url-for-your-project>
-
-
-Update/upgrade submodules via
-
-
-    git submodule update --init --merge --recursive
+```txt
+watch-path
 ```
 
 
@@ -111,26 +82,14 @@ Update/upgrade submodules via
 
 
 ```Bash
-git add .gitmodules
-git add "${_module_path}"
-
-
-## Add any changed files too
+git add requirements.txt
 
 
 git commit -F- <<'EOF'
-:heavy_plus_sign: Adds `python-utilities/watch_path#1` submodule
+:heavy_plus_sign: Adds `python-utilities/watch_path#1` as dependency
 
 
-
-**Additions**
-
-
-- `.gitmodules`, tracks submodules AKA Git within Git _fanciness_
-
-- `README.md`, updates installation and updating guidance
-
-- `modules/watch_path`, Runs command or callback function when watched path modified time changes
+## Anything else worth committing
 EOF
 
 
@@ -150,26 +109,7 @@ git push
   "&#x1F9F0;"
 
 
-Example of running as command-line utility...
-
-
-- _Installation_
-
-
-```Bash
-mkdir -p ~/git/hub/python-utilities/watch_path
-
-cd ~/git/hub/python-utilities/watch_path
-
-git clone https://github.com/python-utilities/watch_path.git
-
-mkdir -p ~/bin
-
-ln -s "${HOME}/git/hub/python-utilities/watch_path/watch_path.py" "${HOME}/bin/watch_path"
-```
-
-
-- Print available commands
+- Print available CLI (Command Line Interface) options
 
 
 ```Bash
