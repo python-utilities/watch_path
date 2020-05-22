@@ -10,14 +10,13 @@ with open(".github/README.md", "r") as fh:
 
 setup(
     name = "watch_path",
-    version = "0.0.3",
+    version = "0.0.4",
     author = "S0AndS0",
     author_email = "StrangerThanBland@gmail.com",
     description = "Simple wrapper for `os.stat`, calls callback function time-stamp changes",
     long_description = long_description,
     long_description_content_type = "text/markdown",
     url = "https://github.com/python-utilities/watch_path",
-    download_url = 'https://github.com/python-utilities/watch_path/archive/v0.0.3.tar.gz',
     packages = find_packages(),
     classifiers = [
         'Development Status :: 3 - Alpha',
