@@ -10,7 +10,7 @@ with open(".github/README.md", "r") as fh:
 
 setup(
     name = "watch_path",
-    version = "0.0.8",
+    version = "0.0.9",
     author = "S0AndS0",
     author_email = "StrangerThanBland@gmail.com",
     description = "Simple wrapper for `os.stat`, calls callback function time-stamp changes",
