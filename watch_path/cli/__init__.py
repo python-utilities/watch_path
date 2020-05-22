@@ -12,7 +12,7 @@ from sys import argv
 from time import sleep
 
 
-from __init__ import Watch_Path
+from watch_path import Watch_Path
 
 
 __license__ = """
