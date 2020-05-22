@@ -87,7 +87,7 @@ path_watcher = Watch_Path(**args)
 decode = args.get('decode')
 
 
-def main(args):
+def main():
     try:
         for callback_results in path_watcher:
             if callback_results:
@@ -104,6 +104,3 @@ def main(args):
 
     except KeyboardInterrupt:
         print('Stopping watcher and exiting...')
-
-
-main(args)
