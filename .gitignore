@@ -1,4 +1,8 @@
+## Python compiled/cached
 __pycache__
 *.pyc
+
+## Python setuptools
+build
 dist
 watch_path.egg-info
