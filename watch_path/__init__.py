@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 
-if __name__ == '__main__':
-    raise NotImplementedError('Please import Watch_Path instead')
+if __name__ == "__main__":
+    raise NotImplementedError("Please import Watch_Path instead")
 
 
 import os
-from collections import Iterator
+from collections.abc import Iterator
 
 
 class Watch_Path(dict, Iterator):
@@ -17,16 +17,16 @@ class Watch_Path(dict, Iterator):
 
     def __init__(self, path, callback, **kwargs):
         # super(Watch_Path, self).__init__(**kwargs)
-        self.update(time_stamp = self.file_modified_time(path),
-                    path = path,
-                    callback = callback)
+        self.update(
+            time_stamp=self.file_modified_time(path), path=path, callback=callback
+        )
 
-        self.update(callback_kwargs = kwargs)
+        self.update(callback_kwargs=kwargs)
 
     def __iter__(self):
         return self
 
-    def throw(self, type = None, traceback = None):
+    def throw(self, type=None, traceback=None):
         raise StopIteration
 
     @staticmethod
@@ -43,15 +43,15 @@ class Watch_Path(dict, Iterator):
             time_stamp = self['time_stamp']
         """
         try:
-            new_time_stamp = self.file_modified_time(self['path'])
+            new_time_stamp = self.file_modified_time(self["path"])
         except OSError as e:
             print(e)
             self.throw(GeneratorExit)
 
-        if new_time_stamp != self['time_stamp']:
-            self['time_stamp'] = new_time_stamp
-            return self['callback'](path = self['path'],
-                                    time_stamp = new_time_stamp,
-                                    **self['callback_kwargs'])
+        if new_time_stamp != self["time_stamp"]:
+            self["time_stamp"] = new_time_stamp
+            return self["callback"](
+                path=self["path"], time_stamp=new_time_stamp, **self["callback_kwargs"]
+            )
 
     __next__ = next
