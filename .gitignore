@@ -6,3 +6,6 @@ __pycache__
 build
 dist
 watch_path.egg-info
+
+## Vim
+*.swp
