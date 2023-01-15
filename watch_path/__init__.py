@@ -6,7 +6,14 @@ if __name__ == "__main__":
 
 
 import os
-from collections.abc import Iterator
+
+try:
+    from collections.abc import Iterator
+except ImportError:
+    from collections import Iterator
+
+    from warnings import warn
+    warn("Iterator imported from `collections` instead of `collections.abc`")
 
 
 class Watch_Path(dict, Iterator):
