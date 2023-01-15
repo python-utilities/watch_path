@@ -44,7 +44,7 @@ Runs command or callback function when path file modified time changes
 Python version 2 or 3
 
 
-___
+______
 
 
 ## Quick Start
@@ -195,7 +195,7 @@ if __main__ == '__name__':
 ```
 
 
-___
+______
 
 
 ## Notes
@@ -207,7 +207,7 @@ ___
 This repository may not be feature complete and/or fully functional, Pull Requests that add features or fix bugs are certainly welcomed.
 
 
-___
+______
 
 
 ## Attribution
@@ -225,7 +225,7 @@ ___
 - [StackOverflow -- What does the `b` character do in front of a string literal?](https://stackoverflow.com/questions/6269765)
 
 
-___
+______
 
 
 ## License
@@ -236,7 +236,7 @@ ___
 
 ```
 Documentation for Watch Path
-Copyright (C) 2020 S0AndS0
+Copyright (C) 2023 S0AndS0
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published

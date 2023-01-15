@@ -13,7 +13,7 @@ from watch_path import Watch_Path
 
 __license__ = """
 Inject JavaScript within PDF document body
-Copyright (C) 2020 S0AndS0
+Copyright (C) 2023 S0AndS0
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
